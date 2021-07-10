@@ -1,0 +1,10 @@
+// ici on met le fichier avec les css le plus haut, donc pour les réglages des éléments de bases.
+@import "./settings.scss" ; 
+// ici les sytles des components
+@import "./components/navigation.scss";
+@import "./components/logo";
+@import "./components/card";
+@import "./components/countries";
+@import "./pages/_news";
+@import "./components/article";
+@import "./pages/_home"

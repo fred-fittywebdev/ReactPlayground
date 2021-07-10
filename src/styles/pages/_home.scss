@@ -1,0 +1,12 @@
+.container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-family: $font-2;
+        font-size: 40px;
+    }
+}
