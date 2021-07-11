@@ -6,6 +6,9 @@ import Article from '../components/Article';
 const Citations = () => {
 
     const [citationData, setCitationData] = useState([])
+    const [author, setAuthor] = useState("")
+    const [content, setContent] = useState("")
+    const [error, setError] = useState(false)
 
     useEffect(() => {
         getData()
@@ -16,7 +19,22 @@ const Citations = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('soumis');
+
+        if(content.length < 150) {
+            setError(true)
+        } else {
+            axios.post("http://localhost:3003/Citations", {
+                author: author,
+                content: content,
+                date: Date.now()
+            })
+            .then(() => {
+                setError(false)
+                setAuthor("")
+                setContent("")
+                getData()
+            })
+        }
     }
     
 
@@ -26,8 +44,9 @@ const Citations = () => {
             <h1>Citations</h1>
 
             <form onSubmit={(e) => handleSubmit(e)}>
-            <input type="text" placeholder="Auteur" />
-            <textarea placeholder="Citation"></textarea>
+            <input onChange={(e) => setAuthor(e.target.value)} type="text" placeholder="Auteur" value={author} />
+            <textarea style={{border: error ? "1px solid #e64c3c" : "1px solid #282c34;"}} onChange={(e) => setContent(e.target.value)} placeholder="Citation" value={content}></textarea>
+            {error && <p>Il faut un minimum de 150 caractères !</p>}
             <input type="submit" value="Poster" />
             </form>
             <ul> {citationData
