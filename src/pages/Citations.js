@@ -45,7 +45,7 @@ const Citations = () => {
 
             <form onSubmit={(e) => handleSubmit(e)}>
             <input onChange={(e) => setAuthor(e.target.value)} type="text" placeholder="Auteur" value={author} />
-            <textarea style={{border: error ? "1px solid #e64c3c" : "1px solid #282c34;"}} onChange={(e) => setContent(e.target.value)} placeholder="Citation" value={content}></textarea>
+            <textarea style={{border: error ? "1px solid #e64c3c" : "1px solid #282c34"}} onChange={(e) => setContent(e.target.value)} placeholder="Citation" value={content}></textarea>
             {error && <p>Il faut un minimum de 150 caractères !</p>}
             <input type="submit" value="Poster" />
             </form>
