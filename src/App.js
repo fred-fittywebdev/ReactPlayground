@@ -7,6 +7,7 @@ import About from './pages/About'
 import Pokemon from './pages/Pokemon';
 import Pays from './pages/Pays';
 import Citations from './pages/Citations';
+import Todo from './pages/Todo';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/pays" exact component={Pays} />
         <Route path="/citations" exact component={Citations} />
         <Route path="/pokemon" exact component={Pokemon} />
+        <Route path="/todo" exact component={Todo} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

@@ -19,6 +19,9 @@ const Navigation = () => {
             <NavLink exact to ="pokemon" activeClassName="nav-active">
                 Pokedex
             </NavLink>
+            <NavLink exact to ="todo" activeClassName="nav-active">
+                ToDo
+            </NavLink>
         </div>
     );
 };
